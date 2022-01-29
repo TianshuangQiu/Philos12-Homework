@@ -1,0 +1,195 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{wasysym}
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\degrees}{^{\circ}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Philosophy 12, Problem Set 1}
+\maketitle
+\newpage
+
+\section{What is Prop. Logic?}
+\subsection{Q1.0}
+\begin{itemize}
+    \item If you are taking this class, then you are a Berkeley student.
+    \item It is not the case that you are not taking this class.
+    \item Therefore it is not the case that you are a Berkeley student.
+\end{itemize}
+This is not a good argument since there are a lot of Berkeley students who 
+are not in this class.
+
+\subsection{Q1.1}
+\begin{itemize}
+    \item It is not the case that you can be both at least 10 years old and less than 10 years old.
+    \item You are at lest 10 years old.
+    \item Therefore you are not less than 10 years old.
+\end{itemize}
+This is a good argument, the conclusion logically follows from the premise.
+
+\section{Truth-Functional Connectives}
+\subsection{Q2}
+
+\begin{tabular}{ | c | c | c |}
+    \hline
+    $p$ & Pete heard that $p$ \\
+    \hline
+    TRUE & Maybe (didn't hear it) \\
+    \hline
+    FALSE & Maybe (false rumors) \\
+    \hline
+\end{tabular}
+\newline
+As we can see, the truth table cannot be written because the truth value of 
+"Pete heard that $p$" does not only depend on $p$
+    
+\subsection{Q3}
+
+\begin{tabular} {|c|c|c|}
+    \hline
+    Kate in library & Kate in gym & Kate in neither library nor gym \\
+    \hline
+    TRUE & TRUE & FALSE \\
+    \hline
+    TRUE & FALSE & FALSE \\
+    \hline
+    FALSE & TRUE & FALSE \\
+    \hline
+    FALSE & FALSE & TRUE \\
+    \hline
+\end{tabular}
+\newline
+The truth table is written above. The connective's value depends only on the operand's. 
+Therefore it is truth functional.
+
+\section{The Truth-Functional Conditional}
+\subsection{Q4}
+\textbf{Statement 1}: If I am not playing tennis, then I am watching tennis.
+\newline
+\textbf{Statement 2}: If it is not the case that I am watching tennis, then I am reading about tennis.
+Since we can only do one activity at a time, we have the following truth table.
+\newline
+\begin{tabular}{|c|c|c|}
+    \hline 
+    Playing Tennis & Watching Tennis & Reading about Tennis \\
+    \hline
+    TRUE & FALSE & FALSE \\
+    \hline
+    FALSE & TRUE & FALSE \\
+    \hline
+    FALSE & FALSE & TRUE \\
+    \hline
+\end{tabular}
+\newline
+The first line is invalid since he is not watching tennis AND not reading about tennis, 
+contradicting Statement 2.
+\newline
+The second line is valid since it satisfies both statements.
+\newline
+The thrid line is invalid since he is not watching tennis AND not watching tennis, contradicting 
+Statement 1.
+
+\subsection{Q5}
+\begin{tabular}{|c|c|c|}
+    \hline 
+    Person is actually a knight & Statement is True  & Is there Gold \\
+    \hline
+    TRUE & TRUE & TRUE \\
+    \hline
+    FALSE & FALSE & ? \\
+    \hline
+\end{tabular}
+\newline
+The trivial part is if we have already met a knight, then he tells us 
+the truth and there is gold on the island. 
+\newline
+The knave's case is more interesting, he lies and this statement is false. Therefore the predicate must be true 
+and the conclusion false. However the only way for the predicate to be true is 
+if he is a knight, which is a contradiction. Therefore this case is not possible.
+\newline
+Since the knave's case is not logically possible, we must have met a knight and there is gold on the island.
+
+\section{Valid Forms of Argument I}
+\subsection{Q6.1}
+Let $p$ be "rabbits are fish."
+\newline
+Let $q$ be "mice are fish."
+\newline
+Let $r$ be "unicors exist."
+
+\begin{itemize}
+    \item $p \implies q$
+    \item $q \implies r$
+    \item $p \implies r$
+\end{itemize}
+The argument is valid but unsound. When $p$ is true, $q$ is also true, 
+and thus $r$ is always true. However it is not sound since $p$ is always false.
+
+\subsection{Q6.2}
+Let $p$ be "rabbits are fish."
+\newline
+Let $q$ be "mice are fish."
+\newline
+Let $r$ be "unicorns exist."
+
+\begin{itemize}
+    \item $p \lor q$
+    \item $p \lor r$
+    \item $p \land (q \lor r)$
+\end{itemize}
+We can distribute the and operator to get $(p \land q) \lor (p \land r)$, 
+which is not equal to both our premises ($(p \lor q) \land (p \lor r)$).
+Therefore it invalid and unsound.
+
+\section{Valid Forms of Argument II}
+\subsection{Q7.1}
+
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline 
+    $q$ & $\neg q$ & $q \lor \neg q$ & $r$ & $p$ & $\neg r \implies \neg p$ \\
+    \hline
+    FALSE & TRUE & TRUE & TRUE & TRUE & $\text{FALSE} \implies \text{FALSE}$ \\
+    \hline
+\end{tabular}
+\newline
+$\text{FALSE} \implies \text{FALSE}$ is true since false implying anything is true. Thus here 
+we have all the premises true, but the conclusion $q$ is false. Thus 
+the argument is invalid.
+
+\subsection{Q7.2}
+\begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $p$ & $q$ & $\neg p$ & $p \land \neg p$ & $\text{Statement 1} \implies q$\\
+    \hline
+    TRUE & TRUE & FALSE & FALSE & TRUE \\
+    \hline
+    TRUE & FALSE & FALSE & FALSE & TRUE \\
+    \hline
+    FALSE & TRUE & TRUE & FALSE & TRUE \\
+    \hline
+    FALSE & FALSE & TRUE & FALSE & TRUE \\
+    \hline
+\end{tabular}
+\newline
+Every row evavluates to true, and the conclusion is true.
+
+
+\end{document}
