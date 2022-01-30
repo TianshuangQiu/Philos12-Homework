@@ -1,9 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1643493311 "/home/akita/philos12/Philos12-Homework/hw1/main.tex" "/home/akita/philos12/Philos12-Homework/hw1/main.pdf" "main" 1643493312
+["pdflatex"] 1643519159 "/home/akita/philos12/Philos12-Homework/hw1/main.tex" "/home/akita/philos12/Philos12-Homework/hw1/main.pdf" "main" 1643519162
   "/etc/texmf/web2c/texmf.cnf" 1643487408 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/akita/.texlive2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1643487429 8259523 7cb9534af86b0b196bd5c5b0edbb1ea7 ""
-  "/home/akita/philos12/Philos12-Homework/hw1/main.aux" 1643493312 1560 39ac1191996717f240e1e3201fe76ecb ""
-  "/home/akita/philos12/Philos12-Homework/hw1/main.tex" 1643493311 5793 30c62db43c7809d90766cb8551369b6f ""
+  "/home/akita/philos12/Philos12-Homework/hw1/main.aux" 1643519159 3457 dd6dec585ee43d081ae7808768a8b84e ""
+  "/home/akita/philos12/Philos12-Homework/hw1/main.tex" 1643519159 8267 6d084dbc62383bc2abe33123e530b47f ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -89,11 +89,11 @@
   "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb" 1643487415 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1643487433 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
-  "main.aux" 1643493312 1560 39ac1191996717f240e1e3201fe76ecb "pdflatex"
-  "main.tex" 1643493311 5793 30c62db43c7809d90766cb8551369b6f ""
+  "main.aux" 1643519159 3457 dd6dec585ee43d081ae7808768a8b84e "pdflatex"
+  "main.tex" 1643519159 8267 6d084dbc62383bc2abe33123e530b47f ""
   (generated)
   "/home/akita/philos12/Philos12-Homework/hw1/main.log"
-  "main.aux"
   "/home/akita/philos12/Philos12-Homework/hw1/main.pdf"
+  "main.aux"
   "main.log"
   "main.pdf"

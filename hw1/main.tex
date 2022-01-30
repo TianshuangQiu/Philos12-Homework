@@ -31,7 +31,7 @@
 \subsection{Q1.0}
 \begin{itemize}
     \item If you are taking this class, then you are a Berkeley student.
-    \item It is not the case that you are not taking this class.
+    \item It is not the case that you are taking this class.
     \item Therefore it is not the case that you are a Berkeley student.
 \end{itemize}
 This is not a good argument since there are a lot of Berkeley students who 
@@ -39,11 +39,11 @@ are not in this class.
 
 \subsection{Q1.1}
 \begin{itemize}
-    \item It is not the case that you can be both at least 10 years old and less than 10 years old.
-    \item You are at lest 10 years old.
-    \item Therefore you are not less than 10 years old.
+    \item It is more likely that I go running than that I do my homework.
+    \item I am at least as likely to do my homework than it is that it rains tomorrow.
+    \item Therefore it is more likely that I go running than it is that it rains..
 \end{itemize}
-This is a good argument, the conclusion logically follows from the premise.
+This is a good argument, the conclusion logically follows from the premise ($p > q \geq r$, so $p > r$).
 
 \section{Truth-Functional Connectives}
 \subsection{Q2}
@@ -191,5 +191,112 @@ the argument is invalid.
 \newline
 Every row evavluates to true, and the conclusion is true.
 
+\section{Validity and Soundness}
+\subsection{Q8}
+\subsubsection{Part i}
+If I am in Berkeley, and if Berkeley is on Mars, then I am on Mars.
+
+\subsubsection{Part ii}
+If I am in Berkeley, and if New York City is on Mars, then I am on Earth.
+
+\subsubsection{Parat iii}
+This is not possible since sound arguments are valid and their premises are true.
+Therefore there conclusion must be true.
+
+\section{Syntax of the Prop. Language I}
+\subsection{Q9}
+\subsubsection{Part i}
+Let $p$ be I will go to school.
+\newline
+Let $q$ be I get a cookie now.
+\newline
+Then we have $p \iff q$
+
+\subsubsection{Part ii}
+Let $p$ be John is running.
+\newline
+Let $q$ be Mary is running.
+\newline
+Then we have $p \and q$
+
+\subsubsection{Part i}
+Let $p$ be a foreign national is entitled to social security.
+\newline
+Let $q$ be he has legal employment.
+\newline
+Let $r$ be he has had legal employment less than three years ago.
+\newline
+Let $t$ be he is currently also employed abroad.
+\newline
+Then we have $((q \lor r) \land \neg t )\implies p$
+
+\subsection{Q10}
+\subsubsection{Part f}
+Let $p$ be Shamik goes to work by car.
+\newline
+Let $q$ be Shamik goes to work by bike.
+\newline
+Let $r$ be Shamik goes to work by train.
+\newline
+Then we have $p \lor (q \land r)$
+
+\subsubsection{Part g}
+Let $p$ be the party is on.
+\newline
+Let $q$ be the weather is bad.
+\newline
+Let $r$ be too many are sick.
+\newline
+Then we have $(q \land r) \implies \neg p$
+
+\subsubsection{h}
+Let $p$ be Jasmine is going to school.
+\newline
+Let $q$ be it is raning.
+\newline
+Let $r$ be Seth is going to school.
+\newline
+Then we have $p \land (q \implies r)$
+
+\subsubsection{i}
+Let $p$ be it isn't summer.
+\newline
+Let $q$ be it is damp or cold.
+\newline
+Let $r$ be it is evening or night.
+\newline
+Then we have $p \land (q \implies r)$
+
+\subsubsection{j}
+Let $p$ be you do not help me.
+\newline
+Let $q$ be I need you.
+\newline
+Let $r$ be I will not help you.
+\newline
+Let $s$ be you need me.
+\newline
+Then we have $(q \implies p) \implies (s \implies r)$
+
+\subsubsection{k}
+Let $p$ you stay with me.
+\newline
+Let $q$ be I won't drink anymore.
+\newline
+Then we have $(q \implies p) \implies q$
+
+\subsection{l}
+Let $p$ be we are going.
+\newline
+Let $q$ be it is raining.
+\newline
+Then we have $q \implies \neg p$
+
+\subsection{m}
+Let $p$ be you do mean it.
+\newline
+Let $q$ be I don't believe you.
+\newline
+Then we have $\neg p \land (p \implies q)$
 
 \end{document}
