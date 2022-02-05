@@ -193,20 +193,85 @@ is invalid.
 
 \section{Q4}
 \subsection{a}
-For (i):
-\newline
-\begin{tabular}{ | c | c | c | c |}
+\begin{tabular}{ | c | c | c | c | c | c | c | c | c |}
     \hline
-    $q$ & $r$ & $\neg(q \land r)$ & $\neg r$ \\
+    $p$ & $q$ & $r$ & $\neg p$ & $q \implies p$ & $p \implies r$ & $q \implies r $ & $\neg q$ & $\neg r$\\
     \hline
-    1 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1\\
     \hline
-    1 & 0 & 1 & 1 \\
+    0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0\\
     \hline
-    0 & 0 & 1 & 1 \\
+    0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 1\\
     \hline
-    0 & 1 & 1 & 0 \\
+    0 & 1 & 1 & 1 & 0 & 1 & 1 & 0 & 0\\
+    \hline
+    1 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 0\\
+    \hline
+    1 & 0 & 1 & 0 & 1 & 1 & 1 & 1 & 1\\
+    \hline
+    1 & 1 & 0 & 0 & 1 & 0 & 0 & 0 & 1\\
+    \hline
+    1 & 1 & 1 & 0 & 1 & 1 & 1 & 0 & 0\\
     \hline
 \end{tabular}
 \newline
+We can see that the first two lines are the only cases where all 3 premises are true. 
+In these cases both (i) and (ii) are true but (iii) is false on line 2. Therefore (i) 
+and (ii) are logically implied.
+
+\subsection{b}
+\begin{tabular}{ | c | c | c | c | c | c | c | c | c |}
+    \hline
+    $p$ & $q$ & $r$ & $p \lor r$ & $q \implies \neg r$ & $q \lor \neg r$ & $p \implies q$ & $p \implies (r \lor \neg q)$ & $(\neg p \lor r) \implies q$\\
+    \hline
+    0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 0\\
+    \hline
+    0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0\\
+    \hline
+    0 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 1\\
+    \hline
+    0 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1\\
+    \hline
+    1 & 0 & 0 & 1 & 1 & 1 & 0 & 1 & 1\\
+    \hline
+    1 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 0\\
+    \hline
+    1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1\\
+    \hline
+    1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 1\\
+    \hline
+\end{tabular}
+\newline
+We can see that thtere are only 2 rows in which all 3 prermises are satisfied. In these rows we observe that 
+only (i) is always true. Therefore only (i) is logically implied.
+
+
+\section{Q5}
+\subsection{a}
+No
+\subsection{b}
+No
+\subsection{c}
+Yes
+\subsection{d}
+Yes
+\subsection{e}
+No
+\subsection{f}
+Yes
+\subsection{g}
+No
+\subsection{h}
+No
+\subsection{i}
+Yes
+\subsection{j}
+Yes
+\subsection{k}
+Yes
+\subsection{l}
+No
+
+\section{Q6}
+
 \end{document}
