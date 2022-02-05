@@ -1,0 +1,212 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{wasysym}
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\degrees}{^{\circ}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Philosophy 12, Problem Set 1}
+\maketitle
+
+\section{Q1}
+\subsection{1}
+No it is not, when $\phi = 0, \psi = 1$, $\phi \implies \psi$ is ture, 
+but $\psi \implies \phi$ is false. Therefore they are not equivalent.
+
+\subsection{2}
+\begin{tabular}{ | c | c | c | c|}
+    \hline
+    $\phi$ & $\psi$ & $\phi \implies \psi$ & $\neg\psi \implies \neg\phi$\\
+    \hline
+    1 & 1 & 1 & 1 \\
+    \hline
+    1 & 0 & 0 & 0 \\
+    \hline
+    0 & 0 & 1 & 1 \\
+    \hline
+    0 & 1 & 1 & 1 \\
+    \hline
+\end{tabular}
+\newline
+Since every line is the same, they are equivalent.
+
+\subsection{3}
+Let $\phi = 0, \psi = 1$, $(\phi \implies \psi) = 0$ so $\neg (\phi \implies \psi) = 1$. 
+However $\phi \lor \neg \psi = 0$. They are not equivalent.
+
+\subsection{4}
+\begin{tabular}{ | c | c | c | c|}
+    \hline
+    $\phi$ & $\psi$ & $\neg(\phi \implies \psi)$ & $\phi \land \neg \psi$\\
+    \hline
+    1 & 1 & 0 & 0 \\
+    \hline
+    1 & 0 & 1 & 1 \\
+    \hline
+    0 & 0 & 0 & 0 \\
+    \hline
+    0 & 1 & 0 & 0 \\
+    \hline
+\end{tabular}
+\newline
+Since every line is the same, they are equivalent.
+
+\subsection{5}
+Let $\phi = 0, \psi = 1$, $(\phi \iff \psi) = 0$ so $\neg(\phi \iff \psi) = 1$. 
+However $\neg\phi \iff \neg \psi = 0$. They are not equivalent.
+
+\subsection{6}
+\begin{tabular}{ | c | c | c | c|}
+    \hline
+    $\phi$ & $\psi$ & $\neg(\phi \iff \psi)$ & $\neg \phi \iff \psi$\\
+    \hline
+    1 & 1 & 0 & 0 \\
+    \hline
+    1 & 0 & 1 & 1 \\
+    \hline
+    0 & 0 & 0 & 0 \\
+    \hline
+    0 & 1 & 1 & 1 \\
+    \hline
+\end{tabular}
+\newline
+Since every line is the same, they are equivalent.
+
+\subsection{7}
+\begin{tabular}{ | c | c | c | c|}
+    \hline
+    $\phi$ & $\psi$ & $(\phi \land \psi) \iff (\phi \lor \psi)$ & $\phi \iff \psi$\\
+    \hline
+    1 & 1 & 0 & 0 \\
+    \hline
+    1 & 0 & 0 & 0 \\
+    \hline
+    0 & 0 & 1 & 1 \\
+    \hline
+    0 & 1 & 0 & 0 \\
+    \hline
+\end{tabular}
+\newline
+Since every line is the same, they are equivalent.
+
+
+\section{Q2}
+\subsection{1}
+\begin{tabular}{ | c | c | c | c |}
+    \hline
+    $q$ & $r$ & $\neg(q \land r)$ & $\neg r$ \\
+    \hline
+    1 & 1 & 0 & 0 \\
+    \hline
+    1 & 0 & 1 & 1 \\
+    \hline
+    0 & 0 & 1 & 1 \\
+    \hline
+    0 & 1 & 1 & 0 \\
+    \hline
+\end{tabular}
+\newline
+In all possible rows, there is no such row where both premises are true and the 
+conclusion false, therefore this is a valid consequence.
+
+\subsection{2}
+\begin{tabular}{ | c | c | c | c | c |}
+    \hline
+    $p$ & $q$ & $r$ & $\neg p \lor \neg q \lor \neg r$ & $q \lor r$ \\
+    \hline
+    1 & 1 & 1 & 1 & 1 \\
+    \hline
+    1 & 1 & 0 & 0 & 1 \\
+    \hline
+    1 & 0 & 1 & 1 & 1 \\
+    \hline
+    1 & 0 & 0 & 1 & 0 \\
+    \hline
+    0 & 1 & 1 & 1 & 1 \\
+    \hline
+    0 & 1 & 0 & 1 & 1 \\
+    \hline
+    0 & 0 & 1 & 1 & 1 \\
+    \hline
+    0 & 0 & 0 & 1 & 0 \\
+    \hline
+\end{tabular}
+\newline
+In all possible rows, there is no such row where all premises are true and the 
+conclusion false, therefore this is a valid consequence.
+
+
+\section{Q3}
+\subsection{a}
+Let "vinegar is included in the batter" be $p$, "baking soda is included in the batter" be $q$, 
+"the velvet cake rises" be $r$. 
+\newline
+Then we have $(p \land q) \implies r$. Our conclusion is that $\neg r \implies (\neg p \implies q)$.
+\newline
+This statement is valid because either the vinegar or the baking soda must be absent. If the batter contained 
+vinegar, then it must not have baking soda.
+
+\subsection{b}
+Let "Kovak wins the election" be $p$, "the taxes increase" be $q$, 
+"her party maintains control of the legislature" be $r$. 
+\newline
+Then we have $p \implies (r \implies q)$. Our conclusion is that $\neg q \implies (\neg p \land \neg r)$.
+\newline
+This statement is not valid because Kovak could have won the election but her party did not maintain control. This 
+satisfies the premise but contradicts the conclusion.
+
+\subsection{c}
+Let $a = 0$ be $p$, $b = 0$ be $q$, $a+b =0$ be $r$.
+\newline
+Then we have $(p \land q) \implies r$. Our conclusion is $\neg r \implies (\neg q \lor \neg p)$.
+\newline
+This statement is valid because it is the contrapositive of the original.
+
+\subsection{d}
+Let "Jones drove the car" be $p$, "Smith is innocent" be $q$, 
+"Brown fired the gun" be $r$.
+\newline
+Then we have $(p \implies q) \land (\neg r \implies \neg q)$. Our conclusion is $r \implies \neg q$.
+\newline
+This statement is invalid because in the case that Brown fired the gun, Smith is innocent, and Jones drove the car, 
+all premises are met. However the conclusion is not: Jones did drive the car. Therefore the conclusion 
+is invalid.
+
+
+\section{Q4}
+\subsection{a}
+For (i):
+\newline
+\begin{tabular}{ | c | c | c | c |}
+    \hline
+    $q$ & $r$ & $\neg(q \land r)$ & $\neg r$ \\
+    \hline
+    1 & 1 & 0 & 0 \\
+    \hline
+    1 & 0 & 1 & 1 \\
+    \hline
+    0 & 0 & 1 & 1 \\
+    \hline
+    0 & 1 & 1 & 0 \\
+    \hline
+\end{tabular}
+\newline
+\end{document}
