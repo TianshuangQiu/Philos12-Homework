@@ -28,7 +28,7 @@
 
 \section{Q1}
 \subsection{1}
-No it is not, when $\phi = 0, \psi = 1$, $\phi \implies \psi$ is ture, 
+No it is not, when $\phi = 0, \psi = 1$, $\phi \implies \psi$ is ture,
 but $\psi \implies \phi$ is false. Therefore they are not equivalent.
 
 \subsection{2}
@@ -49,7 +49,7 @@ but $\psi \implies \phi$ is false. Therefore they are not equivalent.
 Since every line is the same, they are equivalent.
 
 \subsection{3}
-Let $\phi = 0, \psi = 1$, $(\phi \implies \psi) = 0$ so $\neg (\phi \implies \psi) = 1$. 
+Let $\phi = 0, \psi = 1$, $(\phi \implies \psi) = 0$ so $\neg (\phi \implies \psi) = 1$.
 However $\phi \lor \neg \psi = 0$. They are not equivalent.
 
 \subsection{4}
@@ -70,7 +70,7 @@ However $\phi \lor \neg \psi = 0$. They are not equivalent.
 Since every line is the same, they are equivalent.
 
 \subsection{5}
-Let $\phi = 0, \psi = 1$, $(\phi \iff \psi) = 0$ so $\neg(\phi \iff \psi) = 1$. 
+Let $\phi = 0, \psi = 1$, $(\phi \iff \psi) = 0$ so $\neg(\phi \iff \psi) = 1$.
 However $\neg\phi \iff \neg \psi = 0$. They are not equivalent.
 
 \subsection{6}
@@ -124,7 +124,7 @@ Since every line is the same, they are equivalent.
     \hline
 \end{tabular}
 \newline
-In all possible rows, there is no such row where both premises are true and the 
+In all possible rows, there is no such row where both premises are true and the
 conclusion false, therefore this is a valid consequence.
 
 \subsection{2}
@@ -150,27 +150,27 @@ conclusion false, therefore this is a valid consequence.
     \hline
 \end{tabular}
 \newline
-In all possible rows, there is no such row where all premises are true and the 
+In all possible rows, there is no such row where all premises are true and the
 conclusion false, therefore this is a valid consequence.
 
 
 \section{Q3}
 \subsection{a}
-Let "vinegar is included in the batter" be $p$, "baking soda is included in the batter" be $q$, 
-"the velvet cake rises" be $r$. 
+Let "vinegar is included in the batter" be $p$, "baking soda is included in the batter" be $q$,
+"the velvet cake rises" be $r$.
 \newline
 Then we have $(p \land q) \implies r$. Our conclusion is that $\neg r \implies (\neg p \implies q)$.
 \newline
-This statement is valid because either the vinegar or the baking soda must be absent. If the batter contained 
+This statement is valid because either the vinegar or the baking soda must be absent. If the batter contained
 vinegar, then it must not have baking soda.
 
 \subsection{b}
-Let "Kovak wins the election" be $p$, "the taxes increase" be $q$, 
-"her party maintains control of the legislature" be $r$. 
+Let "Kovak wins the election" be $p$, "the taxes increase" be $q$,
+"her party maintains control of the legislature" be $r$.
 \newline
 Then we have $p \implies (r \implies q)$. Our conclusion is that $\neg q \implies (\neg p \land \neg r)$.
 \newline
-This statement is not valid because Kovak could have won the election but her party did not maintain control. This 
+This statement is not valid because Kovak could have won the election but her party did not maintain control. This
 satisfies the premise but contradicts the conclusion.
 
 \subsection{c}
@@ -181,13 +181,13 @@ Then we have $(p \land q) \implies r$. Our conclusion is $\neg r \implies (\neg 
 This statement is valid because it is the contrapositive of the original.
 
 \subsection{d}
-Let "Jones drove the car" be $p$, "Smith is innocent" be $q$, 
+Let "Jones drove the car" be $p$, "Smith is innocent" be $q$,
 "Brown fired the gun" be $r$.
 \newline
 Then we have $(p \implies q) \land (\neg r \implies \neg q)$. Our conclusion is $r \implies \neg q$.
 \newline
-This statement is invalid because in the case that Brown fired the gun, Smith is innocent, and Jones drove the car, 
-all premises are met. However the conclusion is not: Jones did drive the car. Therefore the conclusion 
+This statement is invalid because in the case that Brown fired the gun, Smith is innocent, and Jones drove the car,
+all premises are met. However the conclusion is not: Jones did drive the car. Therefore the conclusion
 is invalid.
 
 
@@ -215,8 +215,8 @@ is invalid.
     \hline
 \end{tabular}
 \newline
-We can see that the first two lines are the only cases where all 3 premises are true. 
-In these cases both (i) and (ii) are true but (iii) is false on line 2. Therefore (i) 
+We can see that the first two lines are the only cases where all 3 premises are true.
+In these cases both (i) and (ii) are true but (iii) is false on line 2. Therefore (i)
 and (ii) are logically implied.
 
 \subsection{b}
@@ -226,7 +226,7 @@ and (ii) are logically implied.
     \hline
     0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 0\\
     \hline
-    0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 0\\
+    0 & 0 & 1 & 1 & 1 & 0 & 1 & 1 & 0\\
     \hline
     0 & 1 & 0 & 0 & 1 & 0 & 1 & 1 & 1\\
     \hline
@@ -242,8 +242,8 @@ and (ii) are logically implied.
     \hline
 \end{tabular}
 \newline
-We can see that thtere are only 2 rows in which all 3 prermises are satisfied. In these rows we observe that 
-only (i) is always true. Therefore only (i) is logically implied.
+We can see that there are only 2 rows in which all 3 prermises are satisfied. In these rows we observe that
+only (iii) is always true. Therefore only (iii) is logically implied.
 
 
 \section{Q5}
@@ -273,5 +273,19 @@ Yes
 No
 
 \section{Q6}
+\subsection{Base case}
+Consider the proposition $\phi$. It has length $1$ and no brackets, therefore we know that
+$p_\phi = 0, l_\phi = 1$. The base case holds.
+
+\subsection{Inductive case}
+Assume that $2p_\psi<l_\psi$ holds for all $\psi \in L$ such that $l_\psi \leq n$ for some natural $n$.
+\newline
+Let $A, B$ be arbitrary formulas of length $n$. By our hypothesis we know that they satisfy $2p_A<l_A$ (same for $B$). Furthermore, we know that formulas can be formed by joining two sub-formulas with $(A \land B)$, $(A \lor B)$,
+$(A \implies B)$ or $\neg A$. In the first three cases, our total amount of brackets is $p_A+p_B+2$ and our length is $l_A+l_B+3$. Now we can multiply the first statement by 2: $2p_A+2p_B+4$. Now we can observe the second statement. By our inductive hypothesis we know that $l_A+l_B+3 > 2p_A+2p_B+3$. However, since there can only be an integer number of characters, we have $l_A \geq 2p_A + 1$. The same is true for $l_B$. Therefore we have $l_A+l_B+3 \geq 2p_A+2p_B+3+2 > 2p_A+2p_B+3 $
+In the last case, we have a total of $p_A$ brackets and a total lengtht of $l_A+1$. It is obviously true due to our inductive hypothesis.
+\newline
+Thus we have proven the base case and the inductive case.
+\newline
+Q.E.D.
 
 \end{document}
