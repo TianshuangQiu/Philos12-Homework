@@ -1,0 +1,229 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{wasysym}
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\degrees}{^{\circ}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Philosophy 12, Problem Set 1}
+\maketitle
+
+\section{Q1}
+
+\subsection{1}
+From the problem we have the following
+
+\begin{equation}
+    A \implies \neg B \land \neg L
+\end{equation}
+\begin{equation}
+    B \iff D
+\end{equation}
+\begin{equation}
+    \neg J \implies \neg C
+\end{equation}
+\begin{equation}
+    D \implies K
+\end{equation}
+\begin{equation}
+    L \implies M
+\end{equation}
+\begin{equation}
+    D \implies \neg F
+\end{equation}
+
+$A, B, C, F$ has both $A$ and $B$, which contrardicts rule 1.
+\newline
+$A, C, D, E$ is a possible display of hats.
+\newline
+$A, D, E, F$ contradicts rule 2.
+\newline
+$B, C, D, F$ is a possible display of hats.
+\newline
+$B, C, E, F$ is a possible display of hats.
+
+\subsection{2}
+Following rule 6, $D$ must not be displayed. Therefore $B$ is not displayed. Therefore choice $B$ must be true.
+$A, K, L, M$ are not certain.
+
+
+\section{Q2}
+\begin{tabular}{|c | c |c |c |c |c |}
+    \hline
+    $p$ & $q$ & $r$ & $(\neg p \implies q) \lor r$ & $\neg (p \implies q) \lor r$ & $\neg p \implies (q \lor r)$ \\
+    \hline
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    \hline
+    0 & 0 & 1 & 1 & 1 & 1 \\
+    \hline
+    0 & 1 & 0 & 1 & 0 & 1 \\
+    \hline
+    0 & 1 & 1 & 1 & 1 & 1 \\
+    \hline
+    1 & 0 & 0 & 1 & 1 & 1 \\
+    \hline
+    1 & 0 & 1 & 1 & 1 & 0 \\
+    \hline
+\end{tabular}
+\newline
+We have found rows where 1,2 are different and 2, 3 are different. Thus these formulas are not equivalent.
+
+\section{Q3}
+Since $\phi$ is satisfiable, there exists a valuation $V$ such that $\hat{V}(\phi)=1$.
+Then since $\psi$ is a logical consequence of $\phi$, we can use the same valuation $V$, and $\hat{V}(\psi)=1$. Thus $\psi$ is also satisfiable.
+
+\section{Q4}
+Base case: let $p$ be a proposition. Since $p^* = \neg p$ by definition, the base case holds.
+\newline
+Assume that for some statement $\phi, \psi$, we have $(\phi)^* = \neg \phi$ and $(\psi)^* = \neg \psi$.
+\subsection{b}
+Then consider $(\phi \land \psi)^*$. By definition we have $(\phi \land \psi)^*=(\phi^* \lor \psi^*)$.
+By the inductive hypothesis it is equal to $(\neg \phi \lor \neg \psi)$. Thus we have proven the statement.
+
+\subsection{c}
+Consider $(\phi \lor \psi)^*$. By definition we have $(\phi \lor \psi)^*=(\phi^* \land \psi^*)$.
+By the inductive hypothesis it is equal to $(\neg \phi \land \neg \psi)$. Thus we have proven the statement.
+
+
+\section{Q5}
+\subsection{a}
+Assume that this statement is not a tautology, then $\hat{V}(p \implies q)=0$ and $\hat{V}(q \implies p) = 0$.
+However we4 know that $p \implies q$ is false if and only if $p = 1, q = 0$, but this makes the latter true. Thus 
+this statement is impossible to be false. It is a tautology.
+
+\subsection{b}
+We once again assume that this is not a tautology, then $p \implies (q \lor r)$ must be true and 
+$(p \implies q) \lor (p \implies r)$ is false. Since this is a disjunction, then both 
+arguments must be false, thus we have $p = 1, q = r = 0$. However, this valuation makes 
+the former false. Therefore there is no way for this statement to be false, and it is a tautology.
+
+\subsection{c}
+Let $p = 0, q = 1$, we have $q \implies p \equiv 0$, $p \implies 0 \equiv 1$, $1 \implies p \equiv 0$. 
+We have found a valuation such that it is false, and it is not a tautology.
+
+\subsection{d}
+Assume that this is not a tautology. Then $\neg p$ must be true and $p \implies q$ must be false. 
+The former logically implies that $p$ is false. However this makes the latter always true. 
+Since there is no way for this to be false, it is a tautology.
+
+
+\section{Q6}
+\subsection{a}
+Assume that this is satisfiable, then each subpart of the conjunction must be true.
+$p = 1$ from the first argument, $q = 1$ from the second argument. This valuation fails 
+on the third argument. Since there is no way for the third argument to evaluate to true 
+when the first two is true, this is not satisfiable.
+
+\subsection{b}
+Assume that this is satisfiable, then each subpart of the conjunction must be true.
+$p = 1$ from the first argument. Since $\neg(q \implies (q \implies \neg p))$ must also 
+be true, then $q \implies (q \implies \neg p)$ must be false. Therefore $q$ must be true and 
+$(q \implies \neg p)$ false. Our valuation of $p = 1, q = 1$ satisfies this. Therefore when $p = 1. q =1$, 
+the whole expression evaluates to true. It is satisfiable.
+
+\subsection{c}
+This expression is equivalent to $p \land \neg p$, which is not satisfiable.
+
+\subsection{d}
+Assume that this is satisfiable, then each subpart of the conjunction must be true.
+From the second and third arguments we know that since the negative of the implication is 
+true, then the implication must be false. $p = 1, r = 1, q = 0$. This also satisfies the 
+first argument. When $p = 1, r = 1, q = 0$, this statement is true. It is satisfiable.
+
+
+\section{Q7}
+\subsection{a}
+$$\neg(p \lor (q \implies r))$$
+$$\equiv \neg(p \lor (r \lor \neg q))$$
+$$\equiv \neg (p \lor r \lor \neg q)$$
+$$\equiv \neg p \land \neg r \land q$$
+
+\subsection{b}
+$p \implies (q \land (p \implies r)) \equiv p \implies (q \land (\neg p \lor r)) \equiv \neg p \lor (q \land (\neg p \lor r))$
+\newline
+$\equiv \neg p \lor \neg \neg (q \land (\neg p \lor r)) = \neg p \lor \neg (\neg q \lor \neg (\neg p \lor r))$
+
+\subsection{c}
+$(p \land q) \iff (q \implies r) \equiv ((p \land q) \implies (q \implies r)) \land ((q \implies r) \implies (p \land q)) $
+\newline
+$$\equiv \neg \neg (((p \land q) \implies (q \implies r)) \land ((q \implies r) \implies (p \land q)))$$
+$$\equiv \neg (\neg((p \land q) \implies (q \implies r)) \lor \neg((q \implies r) \implies (p \land q)))$$
+$$\equiv \neg (((p \land q) \implies (q \implies r)) \implies \neg((q \implies r) \implies (p \land q)))$$
+$$\equiv \neg ((\neg \neg(p \land q) \implies (q \implies r)) \implies \neg((q \implies r) \implies \neg \neg(p \land q)))$$
+$$\equiv \neg ((\neg (\neg p \lor \neg q) \implies (q \implies r)) \implies \neg((q \implies r) \implies \neg (\neg p \lor \neg q)))$$
+$$\equiv \neg ((\neg (p \implies \neg q) \implies (q \implies r)) \implies \neg((q \implies r) \implies \neg (p \implies \neg q)))$$
+
+
+\section{Q8}
+Assume that $S(\phi) \equiv \phi$ and $S(\psi) \equiv \psi$. Consider $S(\phi \land \psi)$, 
+by definition it is equal to $\neg (\neg S(\phi) \lor \neg S(\psi) )$
+\newline
+By our inductive hypothesis this is now equivalent to $\neg (\neg \phi \lor \neg \psi )$, now we 
+can simply apply De Morgan's Law to see that it is equivalent to $\phi \land \psi$
+
+
+\section{Q9}
+$\hat{V}(p) = \hat{V}(p)$
+\newline
+$\hat{V}(\neg p) = \hat{V}(p \downarrow p) $
+\newline
+$\hat{V}(p \lor q) = \hat{V}((p \downarrow q) \downarrow(p \downarrow q)) $
+\newline
+$\hat{V}(p \land q) = \hat{V}(((p \downarrow p) \downarrow(q \downarrow q)) 
+\downarrow ((p \downarrow p) \downarrow(q \downarrow q))) $
+\newline
+$\hat{V}(p \implies q) = 
+\hat{V}(((p \downarrow p)\downarrow q) \downarrow((p \downarrow p) \downarrow q)) $
+\newline
+$\hat{V}(p \iff q) = 
+\hat{V}(((((p \downarrow p)\downarrow q) \downarrow((p \downarrow p) \downarrow q)\downarrow ((p \downarrow p)\downarrow q) \downarrow((p \downarrow p) \downarrow q))
+ \downarrow(((q \downarrow q)\downarrow p) \downarrow((q \downarrow q) \downarrow p) \downarrow ((q \downarrow q)\downarrow p) \downarrow((q \downarrow q) \downarrow p))) 
+\downarrow ((((p \downarrow p)\downarrow q) \downarrow((p \downarrow p) \downarrow q) \downarrow ((p \downarrow p)\downarrow q) \downarrow((p \downarrow p) \downarrow q))
+ \downarrow(((q \downarrow q)\downarrow p) \downarrow((q \downarrow q) \downarrow p) \downarrow ((q \downarrow q)\downarrow p) \downarrow((q \downarrow q) \downarrow p))))$
+
+
+\section{Q9}
+We use a truth table:
+\newline
+\begin{tabular}{|c | c |c |c |c |}
+    \hline
+    $x_1$ & $x_2$ & $x_3$ & $\min^3(x_1, x_2, x_3)$ & $(x_1 \downarrow x_2) \lor (x_1 \downarrow x_3) \lor (x_2 \downarrow x_3)$ \\
+    \hline
+    0& 0& 0& 1& 1 \\
+    \hline
+    0& 0& 1& 1& 1 \\
+    \hline
+    0& 1& 0& 1& 1 \\
+    \hline
+    0& 1& 1& 0& 0 \\
+    \hline
+    1& 0& 0& 1& 1 \\
+    \hline
+    1& 0& 1& 0& 0 \\
+    \hline
+    1& 1& 0& 0& 0 \\
+    \hline
+    1& 1& 1& 0& 0 \\
+    \hline
+\end{tabular}
+\newline
+Thus $\min^3(x_1, x_2, x_3) \equiv (x_1 \downarrow x_2) \lor (x_1 \downarrow x_3) \lor (x_2 \downarrow x_3)$
+\end{document}
