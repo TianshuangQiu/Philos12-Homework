@@ -1,0 +1,130 @@
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amsmath,amsthm} 
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{natbib} 
+\usepackage{bussproofs}
+\usepackage[letterpaper]{geometry} 
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1.5in,rmargin=1.5in} 
+\usepackage{appendix}
+\usepackage{tikz}
+\usepackage{pgf} 
+\usetikzlibrary{patterns,automata,arrows,shapes,snakes,topaths,trees,backgrounds,positioning,through,calc}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{stmaryrd}  
+\usepackage{comment}
+\usepackage{hyperref}
+\usepackage{circuitikz}
+%\hypersetup{colorlinks=true, citecolor=false, linkcolor=blue}  
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{fact}{Fact}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{question}{Question}  
+\newtheorem{remark}{Remark} 
+
+\usepackage{enumitem}
+
+
+\makeatletter  
+\makeatother
+
+\onehalfspace
+
+\begin{document} 
+	
+	\title{PHIL 12A -- Spring 2022 \\ Problem Set 4}
+	\date{Due February 20, 2022}
+	
+	\maketitle
+	
+	%\tableofcontents
+	
+	\begin{center}75 points.\end{center}
+	
+	\setcounter{section}{1}
+	
+	\section{Basic Theory of Propositional Logic}
+	
+	\subsection{Truth Functions}
+	
+	\subsubsection{Truth Functions I}
+	\begin{enumerate}[label=\arabic*.,ref=\arabic*,resume]
+		\item (15 points) Consider the truth function $\mathrm{full}:2^5\to 2$ (short for `full house'):
+		\[\mathrm{full}(x_1,x_2,x_3,x_4,x_5)=\begin{cases} 1&\mbox{ if }2\leq x_1+x_2+x_3+x_4+x_5\leq 3 \\ 0 &\mbox{ otherwise}   \end{cases}.\]
+		Find a formula that defines $\mathrm{full}$.
+	\end{enumerate}
+	\subsubsection{Truth Functions II}
+	
+	\begin{enumerate}[label=\arabic*.,ref=\arabic*,resume]
+		\item \textit{Extra credit}.  (5 points) Let $\mathcal{L}_\to(\{p,q\})$ be the set of formulas of $\mathcal{L}(\{p,q\})$ in which the only connective is $\to$. How many \textit{equivalence classes} of formulas of $\mathcal{L}_\to(\{p,q\})$ are there? Justify your answer.
+	\end{enumerate}
+	
+	\subsubsection{Digital Circuits}
+	\begin{enumerate}[label=\arabic*.,ref=\arabic*,resume]
+		\item (10 points) Draw circuits corresponding to the following formulas that use only NOT, AND, and OR gates:
+		\begin{enumerate}
+			\item $p\to(\neg q\to (p\land r))$;
+			\item $\neg((p\lor r)\to (q\lor r))$
+		\end{enumerate}
+		\newpage	
+		\item\label{CircProb2} (10 points) Given the circuit in Figure \ref{Circ2}, draw an equivalent circuit using only NOR gates. 
+	\end{enumerate}
+		
+	\begin{figure}[h]
+		\begin{center}
+			\begin{circuitikz} \draw
+				(0,2) node[and port] (myand1) {}
+				(-.7,2) node {{\tiny AND}}
+				(-.8,0) node {{\tiny NOT}}
+				(1.45,1) node {{\tiny OR}}
+				(-.65,0) node[not port] (myand2) {}
+				(2,1) node[or port] (myxnor) {}
+				(myand1.out) -- (myxnor.in 1)
+				(myand2.out) -- (myxnor.in 2);
+			\end{circuitikz}
+			\caption{circuit for problem \ref{CircProb2}.}\label{Circ2}
+		\end{center}
+	\end{figure}
+	
+	
+	\subsection{Algorithms and Combinatorial Problems}
+	\subsubsection{Algorithms I}
+	\begin{enumerate}[label=\arabic*.,ref=\arabic*,resume]
+		\item\label{CNFprob} (15 points) Convert each of the following formulas into an equivalent formula in CNF, showing each step of the CNF algorithm:
+		\begin{enumerate}
+			\item $\neg((p\land q\land r)\lor (\neg p\land q\land r)\lor (\neg q\land \neg r))$;
+			\item $(p\to (q\land r))\land \neg (q\leftrightarrow r)\land ((q\lor r)\to p)$;
+			\item $(p\to(q\to r))\to((p\to q)\to(p\to r))$.
+		\end{enumerate}
+		\item (15 points)
+		\begin{enumerate}
+			\item Describe an algorithm for converting any given formula into an equivalent formula in DNF. 
+			\item Run your algorithm on the following formulas:
+			\begin{enumerate}
+				\item $(p\leftrightarrow q)\leftrightarrow r$;
+				\item $(p\lor q)\land (p\lor r)\land (p\lor s)$.
+			\end{enumerate}
+		\end{enumerate}
+	\end{enumerate}
+	
+	\subsubsection{Algorithms II}
+	
+	\begin{enumerate}[label=\arabic*.,ref=\arabic*,resume]
+		\item (10 points) On the resolution algorithm. For each of the CNF formulas produced in problem \ref{CNFprob}, use resolution  to test whether the formulas is satisfiable, showing each step of the resolution algorithm.
+		%\item (\emph{Practice}) On the tableau algorithm.  Exercises 8.1, 8.2, 8.3, and 8.4 of Logic in Action.
+	\end{enumerate}
+	
+\end{document}
+
+
+

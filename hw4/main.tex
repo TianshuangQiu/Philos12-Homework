@@ -23,8 +23,111 @@
 
 \author{Tianshuang (Ethan) Qiu}
 \begin{document}
-\title{Philosophy 12, Problem Set 4}
+\title{Philosophy 12, Problem Set 5}
 \maketitle
 
+\section{Q1}
+The function is true if and only if there are between (inclusive) 2 and 3 true values in $x_1, x_2, ... ,x_5$.
+Therefore we can simply consider the following cases: there are 2 trues or (exclusive) there are 3 trues.
+\newline
+For an algorithmic approach, we can simply negate the cases where they are negative, or more 
+explicity, when they sum to 0, 1, 4 or 5.
+\newline
+$f(x_1, x_2, x_3,x_4,x_5) = 0$, then we have $\neg (x_1 \lor x_2 \lor x_3 \lor x_4 \lor x_5)$
+\newline
+$f(x_1, x_2, x_3,x_4,x_5) = 1$, then we have
+\begin{itemize}
+    \item $\neg (x_2 \lor x_3 \lor x_4 \lor x_5) \land x_1$
+    \item $\neg (x_1 \lor x_3 \lor x_4 \lor x_5) \land x_2$
+    \item $\neg (x_1 \lor x_2 \lor x_4 \lor x_5) \land x_3$
+    \item $\neg (x_1 \lor x_2 \lor x_3 \lor x_5) \land x_4$
+    \item $\neg (x_1 \lor x_2 \lor x_3 \lor x_4) \land x_5$
+\end{itemize}
 
+$f(x_1, x_2, x_3,x_4,x_5) = 4$, then we have
+\begin{itemize}
+    \item $ x_2 \land x_3 \land x_4 \land x_5 \land  x_1$
+    \item $ x_1 \land x_3 \land x_4 \land x_5 \land  x_2$
+    \item $ x_1 \land x_2 \land x_4 \land x_5 \land  x_3$
+    \item $ x_1 \land x_2 \land x_3 \land x_5 \land  x_4$
+    \item $ x_1 \land x_2 \land x_3 \land x_4 \land  x_5$
+\end{itemize}
+
+$f(x_1, x_2, x_3,x_4,x_5) = 5$, then we have $x_1 \land x_2 \land x_3 \land x_4 \land x_5$
+\newline
+Finally we combine them and negate the whole thing:
+$$\neg((\neg (x_1 \lor x_2 \lor x_3 \lor x_4 \lor x_5)) \lor (\neg (x_2 \lor x_3 \lor x_4 \lor x_5) \land x_1)
+\lor (\neg (x_1 \lor x_3 \lor x_4 \lor x_5) \land x_2)$$$$ \lor (\neg (x_1 \lor x_2 \lor x_4 \lor x_5) \land x_3)
+\lor (\neg (x_1 \lor x_2 \lor x_3 \lor x_5) \land x_4) \lor (\neg (x_1 \lor x_2 \lor x_3 \lor x_4) \land x_5)
+\lor (x_2 \land x_3 \land x_4 \land x_5 \land  x_1) $$$$\lor (\neg (x_1 \lor x_3 \lor x_4 \lor x_5) \land x_2)
+\lor (x_1 \land x_2 \land x_4 \land x_5 \land  x_3) \lor (x_1 \land x_2 \land x_3 \land x_5 \land  x_4)
+\lor (x_1 \land x_2 \land x_3 \land x_4 \land  x_5) $$$$\lor (x_1 \land x_2 \land x_3 \land x_4 \land x_5))$$
+
+
+\section{Q5}
+
+\subsection{a}
+$\neg((p\land q\land r)\lor (\neg p\land q\land r)\lor (\neg q\land \neg r))$
+\newline
+$\equiv \neg(p\land q\land r)\land \neg (\neg p\land q\land r)\land \neg(\neg q\land \neg r)$
+\newline
+$\equiv (\neg p \lor q \lor r) \land (p \lor q \lor r) \land (q \lor r)$
+
+\subsection{b}
+$(p\to (q\land r))\land \neg (q\leftrightarrow r)\land ((q\lor r)\to p)$
+\newline
+$\equiv (\neg p \lor (q \land r)) \land \neg((\neg q \lor r) \land (\neg r \lor q)) \land (\neg (q \lor r) \lor p)$
+\newline
+$\equiv (\neg p \lor q) \land (\neg p \lor r) \land (\neg(\neg q \lor r) 
+\lor \neg(\neg r \lor q)) \land (p \lor (\neg q \land \neg r))$
+\newline
+$\equiv (\neg p \lor q) \land (\neg p \lor r) \land ((\neg r \land q) \lor (r \land \neg q)) \land (p \lor \neg q) \land (p \lor \neg r) $
+\newline
+$((\neg r \land q) \lor (r \land \neg q))$
+$\equiv ((\neg r \land q) \lor r) \land ((\neg r \land q) \lor \neg q)$
+\newline
+$\equiv (\neg r \lor r) \land (r \lor q) \land (\neg q \lor \neg r) \land (\neg q \lor q)$
+\newline
+Therefore the final expression is
+$$(\neg p \lor q) \land (\neg p \lor r) \land  (r \lor q) \land (\neg q \lor \neg r) \land (p \lor \neg q) \land (p \lor \neg r) $$
+
+\subsection{c}
+$(p \implies (q \implies r)) \implies ((p \implies q) \implies (p \implies r))$
+\newline
+$\equiv \neg(\neg p \lor (\neg q \lor r)) \lor (\neg(\neg p \lor q) \lor (\neg p \lor r))$
+\newline
+$\equiv (p \land \neg(\neg q \lor r)) \lor ( p \land \neg q) \lor (\neg p \lor r)$
+\newline
+$\equiv (p \land q \land \neg r) \lor ( p \land \neg q) \lor \neg p \lor r$
+\newline
+$\equiv ((p) \land (p \lor \neg q) \land (q \lor p) \land (\neg r \lor p) \land (\neg r \lor \neg q)) \lor \neg p \lor r$
+\newline
+$\equiv ((p) \land (p \lor \neg q) \land (\neg r \lor \neg q \lor \neg p)) \lor r$
+\newline
+$\equiv (p \lor r) \land (p \lor \neg q \lor r)$
+
+A lot of terms are removed since $1 \land x \equiv x$, and $p \lor \neg p \equiv 1$.
+
+\section{Q6}
+\subsection{a}
+Write the complete truth table of the formula, 
+then for each row that the formula is true, 
+write clause that is the conjunction of all the 
+truth values of the variables. Finally combine each 
+row clause with a disjunction. Thus we have a 
+DNF that describes the formula and is equivalent to it.
+
+
+\subsection{b}
+$(p \iff q) \iff r$
+\newline
+$\equiv \neg(\neg p \lor q) \lor r$
+\newline
+$\equiv (p \land \neg q) \lor r$
+\newline
+$(p \lor q) \land (p \lor r) \land (p \lor s)$
+\newline
+$\equiv (p \lor (q \land r)) \land (p \lor s)$
+\newline
+$\equiv p \lor (q \land r \land s)$
 \end{document}
