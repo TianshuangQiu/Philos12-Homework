@@ -1,0 +1,43 @@
+\documentclass[12pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{wasysym}
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\graphicspath{ {./} }
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\prob}{\mathbb{P}}
+\newcommand{\degrees}{^{\circ}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\author{Tianshuang (Ethan) Qiu}
+\begin{document}
+\title{Philosophy 12, Problem Set 5}
+\maketitle
+
+\section{Q1}
+
+\subsection{a}
+Resolvent of $c1, c2$, we have $V_1 = q \lor s$
+\newline
+Resolvent of $c1, c3$, we have $V_2 = p \lor \neg s$
+\newline
+Resolvent of $c2, c3$, we have $V_3 = \neg p \lor \neg q$
+\newline
+We have our new formula: $(p \lor q) \land (\neg p \lor s) \land (\neg q \lor \neg s) 
+\land (q \lor s) \land (p \lor \neg s) \land (\neg p \lor \neg q)$
+\newline
+We continue the algorithm: the resolvent of $c1, c4$ is $(p \lor q \lor s)$
+
+\end{document}

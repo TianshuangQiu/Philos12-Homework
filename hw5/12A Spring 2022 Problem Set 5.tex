@@ -1,0 +1,115 @@
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amsmath,amsthm} 
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{natbib} 
+\usepackage{bussproofs}
+\usepackage[letterpaper]{geometry} 
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1.5in,rmargin=1.5in} 
+\usepackage{appendix}
+\usepackage{thmtools,thm-restate}
+\usepackage{tikz}
+\usepackage{pgf} 
+\usetikzlibrary{patterns,automata,arrows,shapes,snakes,topaths,trees,backgrounds,positioning,through,calc}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{stmaryrd}  
+\usepackage{comment}
+\usepackage{hyperref}
+\usepackage{circuitikz}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{fact}{Fact}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{question}{Question}  
+\newtheorem{remark}{Remark} 
+
+\usepackage{enumitem}
+
+
+\makeatletter  
+\makeatother
+
+\onehalfspace
+ 
+\begin{document} 
+
+ \title{PHIL 12A -- Spring 2022 \\ Problem Set 5}
+\date{}
+
+\maketitle
+
+
+\begin{center}50 points.\end{center}
+
+\setcounter{section}{0}
+
+\section{Resolution}
+
+\subsection{Resolution}
+
+\begin{enumerate}[label=\arabic*.,ref=\arabic*,resume]
+\item (10 points) For the following formulas in CNF, use the resolution algorithm from lecture to determine wether they are satisfiable. You can halt the algorithm in the first step in which you are able to derive an overt contradiction. 
+\begin{enumerate}
+\item $(p \lor q) \land (\neg p \lor s) \land (\neg q \lor \neg s) $
+\item $p \land (\neg p \lor q) \land (\neg p \lor \neg r) \land (r \lor \neg p \lor \neg q)$
+\end{enumerate}
+\end{enumerate}
+
+\subsection{Subsumption}
+
+\begin{enumerate}[label=\arabic*.,ref=\arabic*,resume]
+\item (10 points) We say that a clause $C'$ is subsumed by a clause $C$  just in case all literals of $C$ are literals of $C'$.  For example, the clause $(p\vee q\vee r)$ is subsumed by the clause $(p\vee q)$.
+\begin{enumerate}
+\item Use the resolution algorithm to determine if the formula
+\[ 
+(p \lor \neg s) \land (\neg p \lor q \lor s) \land \neg s \land (s \lor \neg q) 
+\]
+is satisfiable. But this time, at every step remove clauses that are subsumed by some other clause in your CNF. 
+\item Use the result of (a) to determine a satisfying valuation for the above CNF if one exists. 
+\end{enumerate} 
+\end{enumerate}
+
+\begin{enumerate}[label=\arabic*.,ref=\arabic*,resume]
+\item EXTRA CREDIT (5 points) Does removing subsumed clause as in problem 2 affect the outcome of the resolution algorithm? More precisely: Is it still the case that the input formula is satisfiable just in case the formula the algorithm outputs is? Justify your answer. 
+
+(Note on notation: If $\phi$ is a formula in CNF that contains the clause $C$, you can write $\phi - C$ for the CNF that is just like $\phi$ but with the conjunct $C$ removed. For two clauses $C$ and $C'$, you can write $C \leq C'$ if $C'$ is subsumed by $C$.)
+
+\end{enumerate}
+
+\setcounter{subsection}{2}
+
+\section{Algorithms and Combinatorial Problems}
+
+\setcounter{subsubsection}{2}
+
+\subsubsection{Algorithms III}
+\begin{enumerate}[label=\arabic*.,ref=\arabic*,resume]
+\item (15 points) Suppose you are packing for a backpacking trip and trying to decide which snacks to bring. Your home pantry contains $m$ snack items, each of which has a certain weight $w_i$ and a calorie value $v_i$. Your backpack can only hold a maximum weight of $W$, and for your journey you need a minimum of $V$ calories. Therefore, you need to answer the question: is there is some set $S$ of items from your pantry such that the sum of the weights of the items in $S$ is less than or equal to $W$, while the sum of the calorie values of the items in $S$ is greater than or equal to $V$? 
+\begin{enumerate}
+\item Describe a non-deterministic algorithm for deciding the question. Is it a nondeterministic polynomial-time algorithm? Explain your answer. 
+\item Describe a deterministic algorithm for answering the question. Is it a polynomial-time algorithm? Explain your answer.
+\end{enumerate}
+\end{enumerate}
+
+\subsubsection{Combinatorial Problems}
+\begin{enumerate}[label=\arabic*.,ref=\arabic*,resume]
+\item (15 points) Suppose you are given a (finite) map and three colored pencils---say cyan, magenta, and yellow. You are asked if there is a way to color the map so that (i) each country is colored with \textit{exactly one} color, and (ii) no two adjacent countries (countries whose borders touch) are colored with the same color. 
+\item[] Explain how you can encode this problem with a formula of propositional logic that is satisfiable if and only if there is such a coloring of the map. 
+\item[] Suggestion: number the countries from $1,\dots, n$, and for each $i$ in  $\{1,\dots,n\}$, let $c_i$ mean that country $i$ is colored cyan,  $m_i$ mean that country $i$ is colored magenta, and $y_i$ mean that country $i$ is colored yellow.
+\end{enumerate}
+
+
+\end{document}
+ 
+ 
+ 
+ 
