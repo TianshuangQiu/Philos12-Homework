@@ -38,6 +38,70 @@ Resolvent of $c2, c3$, we have $V_3 = \neg p \lor \neg q$
 We have our new formula: $(p \lor q) \land (\neg p \lor s) \land (\neg q \lor \neg s) 
 \land (q \lor s) \land (p \lor \neg s) \land (\neg p \lor \neg q)$
 \newline
-We continue the algorithm: the resolvent of $c1, c4$ is $(p \lor q \lor s)$
+We continue the algorithm: the resolvent of $c1, c4$ is $(p \lor q \lor s)$, $c1, c5$
+yields $(p \lor q \lor \neg s)$, $c1, c6$ yields $(q \lor \neg q) = 1$, and will be excluded.
+\newline
+$c2, c4$ yields $(\neg p \lor q \lor s)$, $c2, c5$ yields $1$, $c2, c6$ yields $(s \lor \neg p \lor \neg q)$
+\newline
+$c3, c4$ yields $1$, $c3, c5$ yields $(\neg s \lor p \lor \neg q)$, $c3, c6$ yields $(\neg s \lor \neg q \lor \neg p)$
+\newline
+Our new formula becomes $(p \lor q) \land (\neg p \lor s) \land (\neg q \lor \neg s) 
+\land (q \lor s) \land (p \lor \neg s) \land (\neg p \lor \neg q) 
+\land (p \lor q \lor s) \land (p \lor q \lor \neg s) \land (\neg p \lor q \lor s)
+\land (s \lor \neg p \lor \neg q) \land (\neg p \lor q \lor s) \land (s \lor \neg p \lor \neg q)
+\land (\neg s \lor p \lor \neg q) \land (\neg s \lor \neg q \lor \neg p)$
+\newline
+At this stage, any new resolution of any two sub-formulas result in an expression already 
+in our formula. Thus our algorithm terminates, and the formula is satisfiable.
 
+\subsection{b}
+Resolvent of $c1, c2$: $(q)$
+\newline
+Resolvent of $c1, c3$: $(\neg r)$
+\newline
+Resolvent of $c1, c4$: $(r \lor \neg q)$
+\newline
+Consider our formula: $p \land (\neg p \lor q) \land (\neg p \lor \neg r) \land (r \lor \neg p \lor \neg q)
+\land (q) \land (\neg r) \land (r \lor \neg q)$
+\newline
+Resolvent of $q \land (r \lor \neg q)$: $r$. We have both $\neg r$ and $r$ in our CNF, 
+thus it is not satisfiable.
+
+
+\section{Q2}
+\subsection{a}
+\[
+    (p \lor \neg s) \land (\neg p \lor q \lor s) \land \neg s \land (s \lor \neg q)
+    \]
+Resolvent of $c1, c3$: $\neg s$ ($c1$ is subsumed)
+\newline
+Resolvent of $c2, c4$: $(\neg p \lor s)$ ($c2$ is subsumed)
+\newline
+Our formula becomes: $\neg s \land (s \lor \neg q) \land (\neg p \lor s)$
+\newline
+Resolvent of $c1, c2$: $\neg q$ ($c2$ is subsumed)
+\newline
+Resolvent of $c1, c3$: $\neg p$
+\newline
+Thus our formula is $\neg s \land \neg q \land \neg p$. There can no longer be more 
+resolvents. Our algorithm terminates and thus the expression is satisfiable.
+
+\subsection{b}
+$s = 0, q = 0, p = 0$
+
+
+\section{Q3}
+Assume that the algorithm fails and that the result after subsumption yields that the expression 
+is satisfiable but in reality it is not.
+\newline
+Then there must exist subformulas $C, C'$ such that $C \leq C'$. Our algorithm removes $C'$ when 
+$C$ is in the formula. Our assumption implies that at least one such step fails.
+\newline
+Consider an arbitrary valuation of $C$ such that $\hat{V}(C) = 1$. Since $C'$ is 
+subsumed by $C$, it is a disjunction of several other atomic expressiosn. Thus we have 
+$C' = C \lor ...$. Now we can subsitute the valuation of $C$ that gives $\hat{V}(C) = 1$. 
+From our formula above, we have $C' = 1 \lor ... = 1$.
+\newline
+Thus it is impossible for any subsuming formula to be satisfiable and the original to be not 
+satisfiable. Our assumption is in correct and the algorithm works.
 \end{document}
