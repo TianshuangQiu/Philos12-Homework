@@ -28,18 +28,18 @@
 
 \section{Q1}
 \subsection{a}
-Randomly pick items into the bag until we overshoot the maximumt weight $W$. Then 
-remove the last item and check if what's in hte bag has at least $V$ calories. If 
-it does, we have shown that $S$ exists. If not we take every item out and repeat 
+Randomly pick items into the bag until we overshoot the maximumt weight $W$. Then
+remove the last item and check if what's in hte bag has at least $V$ calories. If
+it does, we have shown that $S$ exists. If not we take every item out and repeat
 the algorithm.
 \newline
-This is not a polynomial time algorithm. Since we are randomly selecting the items, 
+This is not a polynomial time algorithm. Since we are randomly selecting the items,
 it is possible to never find such a set $S$ even if $S$ exists.
 
 \subsection{b}
-Since each item can either be picked or not picked, there are $2^n$ ways to pick 
-our items for the backpack. Now we can simply iterate through all $2^n$ options to 
-see if any fits the requirement of having less weight than $W$ and more calories than 
+Since each item can either be picked or not picked, there are $2^n$ ways to pick
+our items for the backpack. Now we can simply iterate through all $2^n$ options to
+see if any fits the requirement of having less weight than $W$ and more calories than
 $V$.
 \newline
 This is also not a polynomial time algorithm since $2^n$ is exponential.
@@ -47,14 +47,14 @@ This is also not a polynomial time algorithm since $2^n$ is exponential.
 
 \section{Q2}
 \subsection{Each country has at least one color}
-Let $i$ be an arbitrary country, then we have $c_i \lor m_i \lor y_i$. Therefore we can apply 
+Let $i$ be an arbitrary country, then we have $c_i \lor m_i \lor y_i$. Therefore we can apply
 to all $i$:
-\[\bigvee _{i = 1} ^n (c_i \lor m_i \lor y_i)\]
+\[\bigwedge _{i = 1} ^n (c_i \lor m_i \lor y_i)\]
 
 \subsection{Each country has at most one color}
 Let $i$ be an arbitrary country, then we have $(c_i \land \neg m_i \land \neg y_i) \lor
-(m_i \land \neg y_i \land \neg c_i) \lor (y_i \land \neg c_i \land \neg m_i)$. 
-Therefore we can apply 
+(m_i \land \neg y_i \land \neg c_i) \lor (y_i \land \neg c_i \land \neg m_i)$.
+Therefore we can apply
 to all $i$:
 \[\bigwedge _{i = 1} ^n (c_i \land \neg m_i \land \neg y_i) \lor
 (m_i \land \neg y_i \land \neg c_i) \lor (y_i \land \neg c_i \land \neg m_i)\]
@@ -68,13 +68,13 @@ We can negate that for all such $i,j$
 Finally we can simply combine these, so our answer is $(2.1)\land(2.2)\land(2.3)$
 
 \section{Q5}
-The first statement is true because there are only two Republicans in the race: 
-Reagan and Anderson. The second statement is where the problem begins. "A Republican" 
-will win the election is true in the pollee's mind because Regan is a Republican. 
+The first statement is true because there are only two Republicans in the race:
+Reagan and Anderson. The second statement is where the problem begins. "A Republican"
+will win the election is true in the pollee's mind because Regan is a Republican.
 They have subsituted "a republican" with "Reagan" because he is decisively
-ahead of Carter. Therefore the final conclusion: "If it's not Regan who wins, it will 
+ahead of Carter. Therefore the final conclusion: "If it's not Regan who wins, it will
 be Anderson" doesn't make sense.
 \newline
-This shows that everyday English is not as strict as formal logic and contains a lot 
+This shows that everyday English is not as strict as formal logic and contains a lot
 of implicit subsitutions of terms.
 \end{document}
